@@ -26,6 +26,23 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## Project Structure Explanation 
+1- Core (business logic layer)
+ . contains the essential business logic of the application
+ . completely independent of frameworks, databases and external technologies
+ . it defines entities, use cases and domain services that drive the core functionality
+2- Infrastructure (External dependencies layer)
+ . interacts with external systems like databases, third-party services and APIs
+ . it depends on the core layer but not the other way around
+3- Application (Entry Points Layer)
+ . handles the application's entry points, such as controllers, dtos, guards..
+ . responsible for receiving requests and passing them to the business logic layer (core)
+ . serves as the bridge between external requests and internal processes
+4- Shared
+ . contains common files that are used across the entire application
+ . ensures code reusability and consistency across different layers
+=> this structure ensures seperation of concerns, repects the S.O.L.I.D principles making the system modular, flexible and easier to test.
+
 ## Project setup
 
 ```bash
